@@ -1,6 +1,6 @@
 # bin_smaforrit
 
-Pet project to practice using Flutter again.
+Pet project to practice using Flutter again making an app that behaves similar to https://bin.arnastofnun.is 
  
 ## Disclaimer
 
