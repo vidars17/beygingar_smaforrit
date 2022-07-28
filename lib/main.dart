@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:bin_smaforrit/styles/color_constants.dart';
+import 'package:bin_smaforrit/services/bin_api.dart';
 
 void main() => runApp( const MyApp());
 
@@ -29,25 +30,12 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  
-  final myController = TextEditingController();
 
-  @override
-  void initState() {
-    super.initState();
-
-    myController.addListener(_printLatestValue);
+  void _printInflection(ord) async {
+    var results = await getOrd(ord);
+    print(results.bmyndir[0].g);
   }
 
-  @override
-  void dispose() {
-    myController.dispose();
-    super.dispose();
-  }
-
-  void _printLatestValue() {
-    print('Resulting text: ${myController.text}');
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -85,8 +73,10 @@ class _HomePageState extends State<HomePage> {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Center(
-          child: TextFormField(
-            controller: myController,
+          child: TextField(
+            onSubmitted: (String str) {
+              _printInflection(str);
+            },
             decoration: const InputDecoration(
               suffixIcon: Padding(
                   padding: EdgeInsets.symmetric(vertical: 15),
