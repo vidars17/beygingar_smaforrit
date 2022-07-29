@@ -1,6 +1,8 @@
+import 'package:bin_smaforrit/code_gen/ord.dart';
 import 'package:flutter/material.dart';
 import 'package:bin_smaforrit/styles/color_constants.dart';
 import 'package:bin_smaforrit/services/bin_api.dart';
+import 'package:bin_smaforrit/screens/results_screens/nafnordPage.dart';
 
 void main() => runApp( const MyApp());
 
@@ -16,6 +18,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
       ),
       home: const HomePage(title: 'BÍN'),
+      routes: {
+        '/no': (context) => NafnordPage(),
+      }
     );
 
   }
@@ -33,9 +38,16 @@ class _HomePageState extends State<HomePage> {
 
   void _printInflection(ord) async {
     var results = await getOrd(ord);
-    print(results.bmyndir[0].g);
-  }
+    if(results.contains(RegExp(r'"hluti"'))) {
+      //go to screen displaying multiple results from query
+      var parsedResults = parseMorgOrd(results);
+    } else {
+      var parsedResults = parseOrd(results);
+      var navOfl = parsedResults.ofl;
+      Navigator.pushNamed(context, "/$navOfl", arguments: parsedResults);
 
+    }
+  }
 
   @override
   Widget build(BuildContext context) {

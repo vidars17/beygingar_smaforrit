@@ -12,7 +12,7 @@ class MorgOrd {
 }
 
 
-@JsonSerializable()
+@JsonSerializable(includeIfNull: false)
 class OrdDetail {
   final String ord;
   final String guid;
