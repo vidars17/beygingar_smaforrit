@@ -1,4 +1,3 @@
-import 'package:bin_smaforrit/code_gen/ord.dart';
 import 'package:flutter/material.dart';
 import 'package:bin_smaforrit/styles/color_constants.dart';
 import 'package:bin_smaforrit/services/bin_api.dart';
@@ -14,10 +13,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'BÍN',
+      title: 'BeygingarApp',
       theme: ThemeData(
       ),
-      home: const HomePage(title: 'BÍN'),
+      home: const HomePage(title: 'BeygingarApp'),
       routes: {
         '/no': (context) => NafnordPage(),
       }
@@ -64,7 +63,16 @@ class _HomePageState extends State<HomePage> {
               decoration: BoxDecoration(
                 color: background,
               ),
-                child: Text('BÍN')
+                child: Text(
+                    'BeygingarApp',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      height: 3,
+                      fontSize: 20,
+                      color: Colors.white
+                  ),
+                )
             ),
             ListTile(
               title: const Text('BÍN vefsíða'),
@@ -77,7 +85,12 @@ class _HomePageState extends State<HomePage> {
               onTap: () {
                 Navigator.pop(context);
               },
-            ),
+            ),ListTile(
+              title: const Text('Frumkóði'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            )
 
           ],
         ),
