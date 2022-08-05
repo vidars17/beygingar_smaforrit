@@ -38,33 +38,34 @@ class MultipleResultsPage extends StatelessWidget {
               itemCount: results.length,
               itemBuilder: (context, int taskIndex) {
                 return Card(
-                    child: InkWell(
-                        onTap: () {
-                          _goToWord(taskIndex);
-                        },
-                        child: SizedBox(
-                          width: 300,
-                          height: 100,
-                          child: Center(
-                            child: RichText(
-                              //results[taskIndex].ord + " " + results[taskIndex].kyn + " " + results[taskIndex].ofl_heiti.toLowerCase(),
-                              text: TextSpan(
+                  child: InkWell(
+                      onTap: () {
+                        _goToWord(taskIndex);
+                      },
+                      child: SizedBox(
+                        width: 300,
+                        height: 100,
+                        child: Center(
+                          child: RichText(
+                            //results[taskIndex].ord + " " + results[taskIndex].kyn + " " + results[taskIndex].ofl_heiti.toLowerCase(),
+                            text: TextSpan(
                                 style: const TextStyle(
-                                  fontSize: 16,
-                                  color: Colors.black
-                                ),
+                                    fontSize: 16, color: Colors.black),
                                 children: <TextSpan>[
                                   TextSpan(text: results[taskIndex].ord + " "),
-                                  TextSpan(text: results[taskIndex].kyn + " ", style: const TextStyle(fontStyle: FontStyle.italic)),
-                                  TextSpan(text: results[taskIndex].ofl_heiti.toLowerCase())
-                                ]
-                              ),
-                            ),
-
-                            ),
-                          )
+                                  TextSpan(
+                                      text: results[taskIndex].kyn + " ",
+                                      style: const TextStyle(
+                                          fontStyle: FontStyle.italic)),
+                                  TextSpan(
+                                      text: results[taskIndex]
+                                          .ofl_heiti
+                                          .toLowerCase())
+                                ]),
                           ),
-                        );
+                        ),
+                      )),
+                );
               })),
     );
   }
