@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:bin_smaforrit/styles/color_constants.dart';
 import 'package:bin_smaforrit/services/bin_api.dart';
 import 'package:bin_smaforrit/screens/results_screens/nafnordPage.dart';
-import 'package:bin_smaforrit/screens/main_screens/multipleResults.dart';
+import 'package:bin_smaforrit/screens/main_screens/multipleResultsPage.dart';
+import 'package:bin_smaforrit/screens/results_screens/sagnordPage.dart';
 
 void main() => runApp(const MyApp());
 
@@ -20,7 +21,9 @@ class MyApp extends StatelessWidget {
         routes: {
           '/multipleResults': (context) => const MultipleResultsPage(),
           '/no': (context) => const NafnordPage(),
-        });
+          '/so': (context) => const SagnordPage(),
+        }
+    );
   }
 }
 
@@ -35,7 +38,11 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   void _searchWord(ord) async {
     var results = await getOrd(ord);
-    if (results.contains(RegExp(r'"hluti"'))) {
+    
+    if(results.contains(RegExp(r'"0":""'))){
+      print("We found nothing");
+      //TODO
+    }else if (results.contains(RegExp(r'"hluti"'))) {
       //go to screen displaying multiple results from query
       results = "[" + results + "]";
       List<OrdDetail> parsedResults = parseOrdDetail(results);

@@ -45,23 +45,39 @@ class NafnordPage extends StatelessWidget {
               ], rows: <DataRow>[
                 DataRow(cells: <DataCell>[
                   const DataCell(Text("Nf.")),
-                  DataCell(Text(declensionMap["NFET"] ?? "--")),
-                  DataCell(Text(declensionMap["NFETgr"] ?? "--"))
+                  DataCell(Text(declensionMap["NFET"] ?? "--",
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.blue))),
+                  DataCell(Text(declensionMap["NFETgr"] ?? "--",
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.blue)))
                 ]),
                 DataRow(cells: <DataCell>[
                   const DataCell(Text("Þf.")),
-                  DataCell(Text(declensionMap["ÞFET"] ?? "--")),
-                  DataCell(Text(declensionMap["ÞFETgr"] ?? "--"))
+                  DataCell(Text(declensionMap["ÞFET"] ?? "--",
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.blue))),
+                  DataCell(Text(declensionMap["ÞFETgr"] ?? "--",
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.blue)))
                 ]),
                 DataRow(cells: <DataCell>[
                   const DataCell(Text("Þgf.")),
-                  DataCell(Text(declensionMap["ÞGFET"] ?? "--")),
-                  DataCell(Text(declensionMap["ÞGFETgr"] ?? "--"))
+                  DataCell(Text(declensionMap["ÞGFET"] ?? "--",
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.blue))),
+                  DataCell(Text(declensionMap["ÞGFETgr"] ?? "--",
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.blue)))
                 ]),
                 DataRow(cells: <DataCell>[
                   const DataCell(Text("Ef.")),
-                  DataCell(Text(declensionMap["EFET"] ?? "--")),
-                  DataCell(Text(declensionMap["EFETgr"] ?? "--"))
+                  DataCell(Text(declensionMap["EFET"] ?? "--",
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.blue))),
+                  DataCell(Text(declensionMap["EFETgr"] ?? "--",
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.blue)))
                 ])
               ]),
               const Text(
@@ -77,23 +93,39 @@ class NafnordPage extends StatelessWidget {
               ], rows: <DataRow>[
                 DataRow(cells: <DataCell>[
                   const DataCell(Text("Nf.")),
-                  DataCell(Text(declensionMap["NFFT"] ?? "--")),
-                  DataCell(Text(declensionMap["NFFTgr"] ?? "--"))
+                  DataCell(Text(declensionMap["NFFT"] ?? "--",
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.blue))),
+                  DataCell(Text(declensionMap["NFFTgr"] ?? "--",
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.blue)))
                 ]),
                 DataRow(cells: <DataCell>[
                   const DataCell(Text("Þf.")),
-                  DataCell(Text(declensionMap["ÞFFT"] ?? "--")),
-                  DataCell(Text(declensionMap["ÞFFTgr"] ?? "--"))
+                  DataCell(Text(declensionMap["ÞFFT"] ?? "--",
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.blue))),
+                  DataCell(Text(declensionMap["ÞFFTgr"] ?? "--",
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.blue)))
                 ]),
                 DataRow(cells: <DataCell>[
                   const DataCell(Text("Þgf.")),
-                  DataCell(Text(declensionMap["ÞGFFT"] ?? "--")),
-                  DataCell(Text(declensionMap["ÞGFFTgr"] ?? "--"))
+                  DataCell(Text(declensionMap["ÞGFFT"] ?? "--",
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.blue))),
+                  DataCell(Text(declensionMap["ÞGFFTgr"] ?? "--",
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.blue)))
                 ]),
                 DataRow(cells: <DataCell>[
                   const DataCell(Text("Ef.")),
-                  DataCell(Text(declensionMap["EFFT"] ?? "--")),
-                  DataCell(Text(declensionMap["EFFTgr"] ?? "--"))
+                  DataCell(Text(declensionMap["EFFT"] ?? "--",
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.blue))),
+                  DataCell(Text(declensionMap["EFFTgr"] ?? "--",
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.blue)))
                 ])
               ])
             ],
